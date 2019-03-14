@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework_1</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .formSec{width: 700px;height: 450px;margin: 0px auto;box-shadow: 0 0 5px 5px gray;}
+        .borderSize{width: 580px;}.inputSize1{width: 200px;}.inputSize2{width: 150px;}
+        .fontSize{font-size: 40px;font-weight: bold;}.fontSet{color: red;}
+        #inputBorderSize{width: 205px;}
+        .btnSize{width: 40px;font-size: 14px;cursor: pointer;background-color:#e5e2dd;color: black;outline: none;}
+        .spIcon{color: red;}
+        .mT10{margin-top: 10px;}.mL60{margin-left: 60px;}.mT30{margin-top: 30px;}.mL10{margin-left: 10px;}
+        .mB10{margin-bottom: 10px;}.pT20{padding-top: 20px;}
+    </style>
+</head>
+<body>
+    <section class="formSec mT10">
+        <p class="fontSize mL60 pT20">毕业生信息</p>
+
+        <!-- 学生信息 -->
+        <fieldset class="borderSize mL60 mT30">
+            <legend class="fontSet mL10">学生信息</legend> 
+            <form action="#" class="mT10" id="nameForm">
+                <span class="mL10">姓&nbsp;&nbsp;名</span><input id="nameInput" class="inputSize1 mL10" type="text" name="name" placeholder="请输入姓名" required>
+                <span class="spIcon">*</span>
+            </form>
+            <form action="#" id="idNumberForm">
+                <span class="mL10">学&nbsp;&nbsp;号</span><input id="idNumberInput" class="inputSize1 mL10" type="text" name="idNumber" placeholder="请输入学号" required>
+                <span class="spIcon">*</span>
+            </form>
+            <form action="#" id="phoneForm">
+                <span class="mL10">手&nbsp;&nbsp;机</span><input id="phoneInput" class="inputSize1 mL10" type="tel" name="phone" placeholder="请输入手机号" required>
+                <span class="spIcon">*</span>
+            </form>
+            <form action="#" class="mB10" id="emailForm">
+                <span class="mL10">邮&nbsp;&nbsp;箱</span><input id="emailInput" class="inputSize1 mL10" type="email" name="email" placeholder="请输入邮箱地址" required>
+                <span class="spIcon">*</span>
+            </form>
+        </fieldset>
+
+        <!-- 录取情况 -->
+        <fieldset class="borderSize mL60 mT30">
+            <legend class="fontSet mL10">录取情况</legend>
+            <form action="#" class="mT10" id="schoolForm">
+                <span class="mL10">录取学校</span><input id="inputBorderSize" class="inputSize1 mL10" type="search" name="school" required list="dataNames">
+                <datalist id="dataNames">
+                </datalist>
+            </form>
+            <form action="#" id="gradeForm">
+                <span class="mL10">入学成绩</span><input class="inputSize1 mL10" type="text" name="grade" required>
+            </form>
+            <form action="#" class="mB10" id="timeForm">
+                <span class="mL10">入学时间</span><input class="inputSize2 mL10" type="date" name="time" required>
+           </form>
+        </fieldset>
+
+        <!-- 按钮 -->
+        <form action="#" class="mL60 mT30">
+            <input class="btnSize" type="submit" value="提交" id="btnInput">
+        </form>
+    </section>
+    <script>
+        function focusFn(idNum){
+            var txt = idNum.placeholder;
+            idNum.onfocus = function(){
+                this.setAttribute('placeholder','');
+            }
+            idNum.onblur = function(){
+                this.setAttribute('placeholder',txt);
+            }
+        }
+
+        function inputFocus(){
+            var _nameInput     = document.getElementById('nameInput');
+            var _idNumberInput = document.getElementById('idNumberInput');
+            var _phoneInput    = document.getElementById('phoneInput');
+            var _emailInput    = document.getElementById('emailInput');
+            focusFn(_nameInput);
+            focusFn(_idNumberInput);
+            focusFn(_phoneInput);
+            focusFn(_emailInput);
+        }
+        inputFocus();
+
+        //录取学校
+        var dataNamesArr = ['河北师范大学','清华大学','北京大学','复旦大学'];
+
+        function createDataOption(){
+            var _dataNames = document.getElementById('dataNames');
+            for(var i = 0;i < dataNamesArr.length;i++){
+                var _op = document.createElement('option');
+                _op.innerHTML = dataNamesArr[i];
+                _dataNames.appendChild(_op);
+            }
+        }
+        createDataOption();
+
+        //多表单提交
+        var _btnInput = document.getElementById('btnInput');
+        _btnInput.onclick = function(){
+            var _nameForm       = document.getElementById('nameForm');
+            var _idNumberForm   = document.getElementById('idNumberForm');
+            var _phoneForm      = document.getElementById('phoneForm');
+            var _emailForm      = document.getElementById('emailForm');
+            var _schoolForm     = document.getElementById('schoolForm');
+            var _gradeForm      = document.getElementById('gradeForm');
+            var _timeForm       = document.getElementById('timeForm');
+            _idNumberForm.submit();
+            _phoneForm.submit();
+            _emailForm.submit();
+            _schoolForm.submit();
+            _gradeForm.submit();
+            _timeForm.submit();
+        }
+    </script>
+</body>
+</html>
