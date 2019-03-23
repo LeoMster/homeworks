@@ -35,6 +35,8 @@
                 var _searchUl       = document.getElementById('searchUl');
                 var _btnInputId     = document.getElementById('btnInputId');
                 var _deleteBtn      = document.getElementById('deleteBtn');
+                var timeArrs        = []; //时间数组
+                var valueArrs       = []; //内容数组
                 var i ;
                 
                 function focusEventFn(){
@@ -47,10 +49,20 @@
                 }
                 focusEventFn();
                
+                // 初始化数组
+                function initArrsFn(){
+                    for(var j = 0;j < localStorage.length;j++){
+                        var _key = localStorage.key(j);
+                        timeArrs[j]  = _key;
+                        valueArrs[j] = localStorage.getItem(_key);
+                    }
+                }
+                initArrsFn();
+
                 // 创建li节点将已有的搜索记录存放
                 function createLiFn(){
                     for(var j = 0;j < localStorage.length;j++){
-                        var key1 = 'key' + j;
+                        var key1 = timeArrs[j];
                         var _li = document.createElement('li');
                         _li.innerHTML = localStorage.getItem(key1);
                         _searchUl.appendChild(_li);
@@ -78,7 +90,7 @@
                 function searchRepeat(write){
                     var m = 0;
                     for(var n = 0;n < i;n++){
-                        var key2 = 'key' + n;
+                        var key2 = timeArrs[n];
                         if( write != localStorage.getItem(key2)){
                             m++;
                         }
@@ -87,7 +99,10 @@
                         var _li_ = document.createElement('li');
                         _li_.innerHTML = write; 
                         _searchUl.appendChild(_li_);
-                        localStorage.setItem('key' + i,write);
+                        var _time = new Date().toGMTString();
+                        timeArrs[i] = _time;
+                        valueArrs[i] = write;
+                        localStorage.setItem(_time,write);
                         i++;
                         _deleteBtn.style.display = 'block';
                     }
@@ -100,6 +115,8 @@
                         this.style.display = 'none';
                         i = 0;
                         localStorage.clear();
+                        timeArrs    = [];
+                        valueArrs   = [];
                     }
                 }
                 deleteEventFn();
