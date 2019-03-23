@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework_2</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .searchDiv{width: 400px;height: 180px;box-shadow: 0 0 5px 5px gray; margin: 0 auto;}
+        .searchInput{width: 250px;height: 50px;font-size: 15px;outline: none;}.searchInput:hover{border: 2px solid orange;}
+        .btnInput{cursor: pointer;width: 120px;height: 40px;background-color:#e5e2dd;color: black;outline: none}
+        .txtSpan{font-size: 20px;font-weight: bold;}.sizeSpan1{width: 380px;height: 65px;position: relative;}
+        .xBtn{left:360px;top: 45px;display: block; position: absolute;width: 20px;height: 20px;background-color: #e5e2dd;cursor: pointer;text-align: center;line-height: 20px;}
+        .mL10{margin-left: 10px;}.mT5{margin-top: 5px;}.mT10{margin-top: 10px;}span{display: block;}ul{text-align: center;}ul li{list-style: none;float: left;margin: 5px 15px 0 0;background: #e5e2dd;cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div class="searchDiv mT10">
+        <form action="#">
+            <input id="searchInputId" class="searchInput mL10 mT10" type="text" name="search" placeholder="请输入想查找的商品" required>
+            <input id="btnInputId" class="btnInput" type="button" name="button" value="搜索">
+        </form>
+        <span class="txtSpan mL10">最近搜索</span>
+        <span id="innerSearchHistory" class="sizeSpan1 mL10 mT5"><ul id="searchUl">
+        </ul><span id="deleteBtn" class="xBtn">X</span></span>
+    </div>
+    <script>
+        window.onload = function(){
+            if(!window.localStorage){
+				alert('你的浏览器不支持localStorage!');
+			}else{
+                var _searchInputId  = document.getElementById('searchInputId');
+                var txt             = _searchInputId.placeholder;
+                var _searchUl       = document.getElementById('searchUl');
+                var _btnInputId     = document.getElementById('btnInputId');
+                var _deleteBtn      = document.getElementById('deleteBtn');
+                var i ;
+                
+                function focusEventFn(){
+                    _searchInputId.onfocus = function(){
+                        this.setAttribute('placeholder','');
+                    }
+                    _searchInputId.onblur = function(){
+                        this.setAttribute('placeholder',txt);
+                    }
+                }
+                focusEventFn();
+               
+                // 创建li节点将已有的搜索记录存放
+                function createLiFn(){
+                    for(var j = 0;j < localStorage.length;j++){
+                        var key1 = 'key' + j;
+                        var _li = document.createElement('li');
+                        _li.innerHTML = localStorage.getItem(key1);
+                        _searchUl.appendChild(_li);
+                    }
+                    i =  localStorage.length;                
+                }
+                createLiFn();
+
+                // 搜索记录
+                function addEventFn(){
+                    if(0 == i){
+                        _searchUl.innerHTML = '无搜索记录';
+                        _deleteBtn.style.display = 'none';
+                    }
+                    _btnInputId.onclick = function(){
+                        if(0 == i){
+                            _searchUl.innerHTML = '';
+                        }
+                        searchRepeat(_searchInputId.value);//这个value不能放在容器里
+                    }
+                }
+                addEventFn();
+
+                // 查重
+                function searchRepeat(write){
+                    var m = 0;
+                    for(var n = 0;n < i;n++){
+                        var key2 = 'key' + n;
+                        if( write != localStorage.getItem(key2)){
+                            m++;
+                        }
+                    }
+                    if(m == i){
+                        var _li_ = document.createElement('li');
+                        _li_.innerHTML = write; 
+                        _searchUl.appendChild(_li_);
+                        localStorage.setItem('key' + i,write);
+                        i++;
+                        _deleteBtn.style.display = 'block';
+                    }
+                }
+
+                // 删除搜索记录
+                function deleteEventFn(){
+                    _deleteBtn.onclick = function(){
+                        _searchUl.innerHTML = '无搜索记录';
+                        this.style.display = 'none';
+                        i = 0;
+                        localStorage.clear();
+                    }
+                }
+                deleteEventFn();
+            }
+        }
+    </script>
+</body>
+</html>
