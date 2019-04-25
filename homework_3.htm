@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .container{width: 400px;height: 200px;margin: 0 auto;box-shadow: 0 0 5px 2px;position: relative;}
+        canvas{position: absolute;left: 0px;top: 0px;}
+        .mT20{margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <div class="container mT20">
+        <canvas id="canvasId_bottom" width="400" height="200"></canvas>
+        <canvas id="canvasId" width="400" height="200"></canvas>
+    </div>
+<script>
+     window.onload = function(){
+        var _canvasId_bottom    = document.getElementById('canvasId_bottom');
+        var ctx_bottom          = _canvasId_bottom.getContext('2d');
+        var _canvasId           = document.getElementById('canvasId');
+        var ctx                 = _canvasId.getContext('2d');
+        var mouseDown;
+
+        // 鼠标事件
+        function evDown(ev){
+            ev.preventDefault();
+            mouseDown = true;
+        };
+        function evUp(ev){
+            ev.preventDefault();
+            mouseDown = false;
+        };
+        function evMove(ev){
+            ev.preventDefault();
+            if(mouseDown){
+                creatCir(this,ev,ctx);
+                pxJudge(ctx,canvasId);
+            }
+        };
+
+        // 绘制文本
+        function creatTxt(_ctx){
+            var txt = '一等奖';
+            _ctx.beginPath();
+            _ctx.font = 'bold 100px 宋体';
+            _ctx.fillStyle = 'red';
+            _ctx.fillText(txt,50,135);
+            _ctx.closePath();
+        }
+        creatTxt(ctx_bottom);
+
+        // 蒙罩
+        function creatRect(_ctx){
+            _ctx.beginPath();
+            _ctx.rect(0,0,400,200);
+            _ctx.fillStyle = 'gray';
+            _ctx.fill();
+            _ctx.closePath();
+        }
+        creatRect(ctx);
+
+        ctx.globalCompositeOperation = 'destination-out';
+
+        // 源图像
+        function creatCir(_ctxId,_ev,_ctx){
+            var rect    = _ctxId.getBoundingClientRect();
+            var x       = _ev.clientX - rect.left * (_ctxId.width / rect.width);
+            var y       = _ev.clientY - rect.top * (_ctxId.height / rect.height);
+            _ctx.beginPath();
+            _ctx.arc(x,y,10,0,2*Math.PI);
+            _ctx.fill();
+            _ctx.closePath();
+        }
+        
+
+        // 实现刮奖
+        _canvasId.addEventListener('mousedown',evDown);
+        _canvasId.addEventListener('mouseup',evUp);
+        _canvasId.addEventListener('mousemove',evMove);
+
+        // 85%
+        function pxJudge(_ctx,_canvasId){
+            var data = _ctx.getImageData(0, 0, 400, 200).data;
+            var length = data.length;
+            var num = 0;
+            for(var i = 0;i < length;i += 4){
+                var op = data[i + 3];
+                if(op < 10){
+                    num++;
+                }
+            }
+            var percentage = num / (length/4);
+            if(percentage > 0.85 ){
+                _canvasId.style.opacity = '0';
+            }
+        }
+    }
+</script>
+</body>
+</html>
