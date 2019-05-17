@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;border: 0;}
+        .containerDiv{
+            margin: 0 auto;width: 408px;height: 488px;
+            box-shadow:0px 0px 8px black,0px 0px 0px 4px #D0D0D0 inset;
+            position: relative;overflow: hidden;
+        }
+        .imgDiv{
+            width: 400px;height: 300px;float: left;
+            margin-top: 4px;margin-left: 4px;overflow: hidden;
+        }
+        .shadow{
+            width: 400px;height: 300px;position: absolute;background-color: black;
+            top: 4px;left: 4px;overflow: hidden;opacity: 0;
+        }
+        .imgInsetDateDiv{
+            width: 56px;height: 56px;text-align: center;
+            border-radius: 50%;background-color: orangered;color: aliceblue;
+            position: absolute;right: 14px;top: 14px;
+        }
+        .introductDiv{
+            width: 400px;height: 180px;float: left;
+            margin-bottom: 4px;margin-left: 4px;
+            position: relative;z-index: 99;background-color: white;top: 0px;
+        }
+        .imgInsetDiv{
+            width: 80px;height: 40px;line-height: 40px;text-align: center;
+            color: aliceblue;background-color: orangered;
+            position: absolute;left: 0;top: -40px;
+        }
+        .title h2{color: orange;}
+        .introduct{color: gray;font-size: 18px;opacity: 0;}
+        .message{position: absolute;bottom: 9px;left: 14px;z-index: 99;}
+        .message p{float: left;color: #D0D0D0;}
+        .fL{float: left;}.pT5{padding-top: 5px;}
+        .mT10{margin-top: 10px;}.mL10{margin-left: 10px;}.mL30{margin-left: 30px;}
+
+        @keyframes transAnimation {
+            from{transform: scale(1);}to{transform: scale(1.25);}
+        }
+        @keyframes slideAnimation{
+            from{top: 0px;}to{top: -100px;}
+        }
+        @keyframes opAnimation1 {
+            from{opacity: 0;}to{opacity: 1;}
+        }
+        @keyframes opAnimation2 {
+            from{opacity: 0;}to{opacity: 0.5;}
+        }
+        .containerDiv:hover img{
+            animation: transAnimation 1s;
+        }
+        .containerDiv:hover .shadow{
+            animation: opAnimation2 1s;
+        }
+        .containerDiv:hover .introductDiv{
+            animation: slideAnimation 1s;
+        }
+        .containerDiv:hover .introduct{
+            animation: opAnimation1 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="mT10 containerDiv">
+        <div class="imgDiv"><img src="./img/zhanqiao.JPG" width="100%" height="100%"></div>
+        <div class="shadow"></div>
+        <div class="imgInsetDateDiv"><p class="pT5">15</p><p>五月</p></div>
+        <div class="introductDiv">
+            <div class="imgInsetDiv">照片</div>
+            <div class="title mT10 mL10 fL">
+                <h1>青岛栈桥</h1>
+                <h2>国家AAAA级旅游景区</h2>
+            </div>
+            <div class="introduct mT10 mL10 fL">
+                青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区。
+                青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。
+                桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。
+            </div>
+        </div>
+        <div class="message"><p>10分钟前</p><p class="mL30">123评论</p></div>
+    </div>
+</body>
+</html>
