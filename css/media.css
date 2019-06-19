@@ -1,0 +1,132 @@
+@media only screen and (max-width: 700px){
+    /* 头部 */
+    #blackTopId{display: none;}
+    #btnInput{display: block;}
+    #navDivId{height: 110px;width: 100%}
+    #navId{height: 110px;line-height: 110px}
+    #navBraId{padding-right: 25%;}
+    #navBraId img{width: 32%;}
+    #navid{height: 110px;padding-left: 0;}
+    #navid li{height: 110px;}
+    #navid{height: 340px;}
+    #navid li a{font-size: 1.6%;height:110px;line-height: 60px;}
+    #navBtnId{margin-top: 40px;}
+    #btnInput{left:60%;top:40px;width:22%;}
+
+    /* 轮播图 */
+    #formGroupId{display: none;}
+    #pDivId1{display: none;}
+    #pDivId2{display: none;}
+    #hiPDivId1{display: block;}
+    #hiPDivId2{display: block;}
+    #innerDivId{height: 365px;}
+    #innerDivId{height: 365px;width: 100%;}
+    #innerDivId img{height: 365px;width: 100%;}
+    #captionId1 h1{left: -50px;top: -300px;font-size: 25px;}
+    #captionId2 h1{left: -50px;top: -300px;font-size: 25px;}
+    #hiPDivId1{border: none;left: -60px;top: -250px;}
+    #hiPDivId2{border: none;left: -60px;top: -250px;}
+    #txtInputId1{width: 100px;height: 34px;}
+    #hideInputId{display: block;position: absolute;left: 10%;bottom: 10%;}
+    #slideImgDiv{position: relative;}
+    #hideInputId input{float: left;}
+    #btnId3{height:34px;font-size: 10px;width:85px;outline: none;border-top-right-radius: 0;border-bottom-right-radius: 0;background: url(../img/position.png) no-repeat 5px 4px;background-color: gray;}
+    #btnId4{width:85px;outline: none;border-top-left-radius: 0;border-bottom-left-radius: 0;background: url(../img/search.png) no-repeat 30px 3px;background-color: orangered;}
+    #txtInputId1{width: 42%;font-size: 10px;}
+
+    /* 小轮播图 */
+    #smallSlideImgDiv{height: 200px;background: white;}
+    #rightDivId{display: none;}
+    #generic1{display: none;}
+    #slideHid{display: block;}
+    #slideHid{height: 195px;width: 100%;}
+    #slideHid div{float: left;padding-top: 20px;}
+    #firstD{height: 195px;width: 30%;}
+    #secondD{height: 195px;width: 50%;}
+    #thirdD{height: 195px;}
+    #inner{height: 175px;width: 170px;}
+    #inner h4{color:#1c5080;padding-bottom: 10px;}
+    #thirdD input{border: 1px solid gray;background: white;margin-top: 45px;}
+
+    /* 热门路线 */
+    #titleId1{display: none;}
+    #hiddenPho{display: block;}
+    #hideTiDivId1{display: block;}
+    #iconId2{color: red;font-size: 20px;padding-right: 10px;}
+    #spanDivId2{font-size: 20px;padding-right: 10px;}
+    #phoId{display: none;}
+    #hiddenPho img{width: 100%;height: 405px;margin-top: 10px;}
+    #shadowx{background: black;width: 100%;height: 50px;position: absolute;left: 0;bottom: 0;opacity: 0.8;}
+    #shadowy{background: black;width: 100%;height: 50px;position: absolute;left: 0;bottom: 0;opacity: 0.8;}
+    #content1{position: relative;width: 100%;}
+    #content2{position: relative;width: 100%;}
+    #shadowx h6{font-size: 10px;float:left;margin: 0;margin-left: 20px;margin-top: 20px;color: white;}
+    #shadowx h5{float:left;margin: 0;margin-left: 20px;margin-top: 18px;color: white;}
+    #shadowy h6{font-size: 10px;float:left;margin: 0;margin-left: 20px;margin-top: 20px;color: white;}
+    #shadowy h5{float:left;margin: 0;margin-left: 20px;margin-top: 18px;color: white;}
+    #btn2{display: block;margin-left: -400px;}
+
+    /* 签证推荐 */
+    #tiDivId{display: none;}
+    #hideTiDivId{display: block;}
+    #iconId1{color: red;font-size: 20px;padding-right: 10px;}
+    #spanDivId1{font-size: 20px;padding-right: 10px;}
+    #photoDivId{display: none;}
+    #hidePhotoId{display: block;width: 100%;}
+    #visa1{height: 560px;width: 100%;}
+    #visa2{height: 280px;width: 100%;}
+    #visa5{height: 280px;width: 100%;}
+    #imgIntroduct1{position: relative;width: 100%;}
+    #imgIntroduct5{position: relative;width: 100%;}
+    #imgIntroduct2{position: relative;width: 100%}
+    #shadow1Id{background: black;width: 100%;height: 50px;position: absolute;left: 0;bottom: 0;opacity: 0.5;}
+    #shadow5Id{background: black;width: 100%;height: 30px;position: absolute;left: 0;bottom: 0;opacity: 0.5;}
+    #shadow2Id{background: black;width: 100%;height: 30px;position: absolute;left: 0;bottom: 0;opacity: 0.5;}
+    #col{width:50%;float: left;}#col1{width:50%;float: left;}
+    #shadow1Id h6{float:left;margin: 0;margin-left: 20px;margin-top: 20px;color: white;}
+    #shadow1Id h5{float:left;margin: 0;margin-left: 20px;margin-top: 18px;color: white;}
+    #shadow5Id h6{float:left;margin: 0;margin-left: 20px;margin-top: 10px;color: white;}
+    #shadow5Id h5{float:left;margin: 0;margin-left: 6px;margin-top: 10px;color: white;}
+    #shadow2Id h6{float:left;margin: 0;margin-left: 20px;margin-top: 10px;color: white;}
+    #shadow2Id h5{float:left;margin: 0;margin-left: 6px;margin-top: 10px;color: white;}
+    #btn1{margin-left: -400px;}
+
+    #bbannerImgId{display: none;}
+
+    /* 使命愿景 */
+    #titleId{display: none;}
+    #titleDiv{display: block;}
+    #rowId{border-color: #f5f5f5;}
+    #iconId{color: red;font-size: 20px;padding-right: 10px;}
+    #spanDivId{font-size: 20px;padding-right: 10px;}
+    #hidMisDivId1{display: none;}
+    #misDivId1{display: block;}
+    #misDivId1 img{width: 100%;height: 330px;}
+    #hidInnerDiv{display: none;}
+    #introDivId{display: block;}
+    #innerDiv h2{text-align: center;}
+    #innerDiv p{text-align: center;width: 300px;margin: 0 auto;}
+    #innerImgId{height: 320px;width: 100%;margin: 0 auto;}
+    #hiddenRowId{height: 500px;}
+    #hiddenRowId h2{text-align: center;margin-top: 70px;}
+    #lastRowId{display: none;}
+    #youshiDivId{display: block;}
+    #hiddenRowId{display:block;}
+    #youshiDivId .col-md-12{background: white;height: 120px;width: 100%;border-top: 0.5px solid aliceblue;border-bottom: 0.5px solid gray;}
+    #youshiDivId img{height: 60px;width: 60px;}
+    #imgIconDivId1{margin: 20px 15% 0 10%;float: left;}
+    #pDivId11{float: left;margin-top: 20px;}
+    #pDivId11 p{width: 150px;font-size: 10px;}
+    #imgIconDivId2{margin: 20px 15% 0 10%;float: left;}
+    #pDivId22{float: left;margin-top: 20px;}
+    #pDivId22 p{width: 150px;font-size: 10px;height: 28px;}
+    #imgIconDivId3{margin: 20px 15% 0 10%;float: left;}
+    #pDivId3{float: left;margin-top: 20px;}
+    #pDivId3 p{width: 150px;font-size: 10px;}
+    #tailROWId1,#tailROWId2,#tailROWId3,#tailROWId4{display: none;}
+    #tailDivId{height: 250px;}
+    #lastP{display: none;}
+    #hiddenP{display: block;}
+    #hiddenP #firstP{margin-top: 80px;}
+    #hiddenP p{padding: 5px 0 0 0;margin: 0;}
+}

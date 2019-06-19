@@ -1,0 +1,126 @@
+    *{margin: 0;padding: 0;outline: none;}
+    ul,li{list-style: none;display: inline-block;}
+    h3,h4{padding: 0;margin: 0;}
+    body{background: #f5f5f5;}
+    .wrapper{width: 100%;}
+
+    /* 头部 */
+    .topDiv{z-index:100;width: 100%;}
+    #navDivId{background-color: white;}
+    .blackTopDiv{width: 100%;height: 46px;background-color: black;}
+    .blackTopDiv .container{height: 46px;line-height: 46px;}
+    .blackTopDiv .container .col-md-2 a{color: white;}
+    .navDiv{width: 100%;height: 78px;}
+    .navDiv nav{height: 78px;line-height: 78px;background: white;border-radius: 0;border: none;z-index: 99;}
+    .navDiv .navbar-branda{padding-right: 80px;position: relative;}
+    .navDiv #navid{z-index: 99;background-color:white;}
+    .navDiv #navid li{height: 78px;padding-left: 35px;}
+    .navDiv #navid li a:hover{border-bottom: 2px solid orangered;}
+    .navDiv #navid li a{font-weight: bold;font-size: 20px;height: 78px;line-height: 46px;}
+    #navBtnId{margin-top: 20px;}
+    #btnInput{display: none;position: absolute;left: 220px;top: 20px;background:orangered;color: white;}
+
+    /* 轮播图 */
+    .slideImgDiv{width: 100%;}
+    .slideImgDiv .carousel-inner{height: 446px;}
+    .slideImgDiv .carousel-inner .item img{width: 100%;height: 446px;}
+    .slideImgDiv .carousel-caption{position: relative;}
+    .slideImgDiv .carousel-caption h1{position: absolute;left: -80px;top: -400px;}
+    .slideImgDiv .carousel-caption .pDiv{position: absolute;left: -80px;top: -300px;padding-left: 20px;padding-top: 10px;border-bottom: 2px solid gray;border-top: 2px solid gray;}
+    .slideImgDiv .carousel-caption .pDiv p{font-size: 17px;}
+    .slideImgDiv #generic form{display: block;position:absolute;left:350px;top: 330px;}
+    .slideImgDiv #generic form .form-group{border: 2px solid black;border-radius: 5px;}
+    .slideImgDiv #generic form input{height: 50px;float: left;}
+    .slideImgDiv #generic form .txt{width: 310px;color: black;} .btn{width: 135px;} 
+    #btnId1{outline: none;border-top-right-radius: 0;border-bottom-right-radius: 0;background: url(../img/position.png) no-repeat 20px 10px;background-color: gray;}
+    #btnId2{outline: none;border-top-left-radius: 0;border-bottom-left-radius: 0;background: url(../img/search.png) no-repeat 45px 10px;background-color: orangered;}
+
+    /* 主体 
+       轮播图 */
+    #smallSlideImgDiv{margin-top: 20px;position: relative;height: 360px;}
+    #smallSlideImgDiv .carousel-caption{position: relative;}
+    #smallSlideImgDiv .carousel-caption h1{position: absolute;top: -300px;right: 500px;}
+    #smallSlideImgDiv .carousel-caption .pDiv{position: absolute;top: -220px;right: 530px;}
+    #smallSlideImgDiv #generic1 .item img{height: 360px;}
+    #smallSlideImgDiv .rightDiv{padding-top: 70px;padding-left: 55px; z-index:99;width: 250px;height:360px;background-color: #14316d;position: absolute;top: 0;right: 10px;}
+    #smallSlideImgDiv .rightDiv p{margin-top:20px;margin-left: -55px;color: white;font-size: 17px;}
+    #smallSlideImgDiv .rightDiv img{margin-left: 20px;}
+    #smallSlideImgDiv .rightDiv input{margin-top: 50px;border: 2px solid white;background-color: #14316d;color: white;padding-left: 10px;}
+    
+    /* 热门路线 */
+    #titleId1 h1{text-align: center;}
+    .navFirstDiv .titleDiv h1,p{text-align: center;}
+    .navFirstDiv .photoDiv .leftPhoto{padding-right: 0;}
+    .navFirstDiv .photoDiv .rightPhoto{padding-left: 0;}
+    .navFirstDiv .photoDiv .leftPhoto img{border: 2px solid white;width: 100%;}
+    .navFirstDiv .photoDiv .rightPhoto img{border: 2px solid white;width: 100%;height: 266.7px;}
+    .navFirstDiv .imgIntroduct{position: relative;color: white;}
+    .navFirstDiv .shadow1{border-left: 2px solid white;border-right: 2px solid white;height: 75px;width: 100%;background-color: black;opacity: 0.8;position: absolute;left: 0;bottom: 0;}
+    .navFirstDiv .shadow2{border-left: 2px solid white;border-right: 2px solid white;height: 60px;width: 100%;background-color: black;opacity: 0.5;position: absolute;left: 0;bottom: 0;}
+    .navFirstDiv .shadow1 h4,h3{margin-left: 20px;margin-top: 15px;}
+    .navFirstDiv .shadow2 h4,h3{margin-left: 20px;margin-top: 4px;}
+
+    /* 签证推荐 */
+    .navSecondDiv .titleDiv h1,p{text-align: center;}
+    .navSecondDiv .photoDiv .leftPhoto{padding-right: 0;}
+    .navSecondDiv .photoDiv .midPhoto{padding-right: 0;padding-left: 0;}
+    .navSecondDiv .photoDiv .rightPhoto{padding-left: 0;}
+    .navSecondDiv .photoDiv .leftPhoto img{border: 2px solid white;width: 100%;}
+    .navSecondDiv .photoDiv .midPhoto img{border: 2px solid white;width: 100%;height: 260.5px;}
+    .navSecondDiv .photoDiv .rightPhoto img{border: 2px solid white;width: 100%;height: 260.5px;}
+    .photoBottomBtn input{outline: none;background-color: white;border: 1px solid black;margin: 20px 0 30px 520px;}
+    .navSecondDiv .imgIntroduct{position: relative;color: white;}
+    .navSecondDiv .shadow3{border-left: 2px solid white;border-right: 2px solid white;height: 40px;width: 100%;background-color: black;opacity: 0.5;position: absolute;left: 0;bottom: 0;}
+    .navSecondDiv .shadow4{border-left: 2px solid white;border-right: 2px solid white;height: 50px;width: 100%;background-color: black;opacity: 0.5;position: absolute;left: 0;bottom: 0;}
+    .navSecondDiv .shadow3 h4,h3{float:left;margin: 0;margin-left: 20px;margin-top: 10px;}
+    .navSecondDiv .shadow4 h4,h3{float:left;margin: 0;margin-left: 20px;margin-top: 10px;}
+
+    .bbannerImg img{width: 100%;}
+    
+    /* 使命与愿景 */
+    #shimingId{width: 100%;background: url(../img/back.png) no-repeat};
+    #shiH1{text-align: center;}
+    .navThirdDiv .titleDiv h1,p{text-align: center;margin-bottom: 30px;}
+    .navThirdDiv .left,.right{padding: 0;}
+    .navThirdDiv img{height: 350px;}
+    .navThirdDiv .right{height: 350px;background: #14316d;color: white;}
+    .navThirdDiv .right h2{text-align: center;margin-bottom: 60px;margin-top: 60px;}
+    .navThirdDiv .right p{margin-bottom: 0;}
+    .navThirdDiv .row{border: 2px solid white;}
+    .navThirdDiv .rowDiv2 div{padding: 0;}
+    .navThirdDiv .rowDiv2 img{width: 100%;}
+    .navThirdDiv .rowDiv3{height: 400px;background: #14316d;}
+    .navThirdDiv .rowDiv3 .col-md-4{position: relative;margin: 40px 0 0 90px;padding:0;width: 200px;height: 300px;background: url(../img/rorate.png) no-repeat;background-size: 200px 200px;}
+    .navThirdDiv .rowDiv3 .col-md-4 img{position: absolute;top:40px;left:65px;width: 70px;height: 80px;}
+    .navThirdDiv .rowDiv3 .ro1{margin-left: 190px;}
+    .navThirdDiv .rowDiv3 .titleP{margin: 0;color: white;position: absolute;top:130px;left:75px}
+    .navThirdDiv .rowDiv3 .textP{color: white;position: absolute;bottom:0;font-size:12px;}
+    
+    /* 尾部 */
+    .tailDiv{width: 100%;height: 600px;background: black;color: white;}
+    .tailDiv .row .botTitle{text-align: center;font-size: 18px;}
+    .tailDiv .row .col-md-2,.col-md-10{margin-top: 60px;}
+    .tailDiv .row .col-md-2 p{width:114px;padding: 0;margin: 10px 0 0 0;text-align: center;}
+    .tailDiv img{background: white;}
+    .tailDiv .row .col-md-2 #lastP{width: 75px;}
+    .tailDiv .row li{padding: 0 15px 10px 0;}
+    .tailDiv .lastRow {border-bottom: 2px solid gray;}
+
+    /* 切换 */
+    #lastP{margin-top: 30px;}
+    #hiddenP{display: none;}
+    #hiddenIconId{display: none;}
+    #titleDiv{display: none;}
+    #misDivId1{display: none;}
+    #introDivId{display: none;}
+    #hiddenRowId{display:none;}
+    #hideTiDivId{display: none;}
+    #hidePhotoId{display: none;}
+    #hideTiDivId1{display: none;}
+    #hiddenPho{display: none;}
+    #slideHid{display: none;}
+    #hiPDivId1{display: none;}
+    #hiPDivId2{display: none;}
+    #youshiDivId{display: none;}
+    #btn2{display: none;}
+    #hideInputId{display: none;}
